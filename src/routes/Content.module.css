@@ -1,0 +1,70 @@
+/* 폰트 */
+@font-face {
+  font-family: "Galmuri7";
+  src: url("../fonts/Galmuri7.ttf");
+}
+
+@font-face {
+  font-family: "Galmuri9";
+  src: url("../fonts/Galmuri9.ttf");
+}
+
+:root {
+	--font-galmuri7: "Galmuri7";
+	--font-galmuri9: "Galmuri9";
+
+  --main-pink: #FF80C2;
+  --light-purple: #FFDBFF;
+}
+
+/* 배경 */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-pink);
+}
+
+/* 메인 홈 */
+.title {
+  text-align : center;
+  padding-top: 6vh;
+  padding-bottom: 4vh;
+
+  font-family: var(--font-galmuri7);
+  font-size: 7vw;
+  color: black;
+}
+
+/* 브라우저 창 frame */
+.mainFrame {
+  width: 90vw;
+  height: 83vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  
+  background-color: var(--light-purple);
+
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1vw;
+}
+
+/* 브라우저 창 header */
+.frameHeader {
+  width: 88vw;
+  height: 7.205vw;
+  object-fit: cover;
+
+  margin: 1vw;
+}
+
+/* 디데이 */
+.dDay {
+  font-family: var(--font-galmuri7);
+  font-size: 7vw;
+  color: var(--main-pink);
+
+  text-align: right;
+  margin-right: 6vw;
+  margin-top: 2vh;
+}

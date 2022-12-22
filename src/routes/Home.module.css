@@ -36,7 +36,7 @@
 }
 
 /* 브라우저 창 frame */
-.main-frame {
+.mainFrame {
   width: 90vw;
   height: 83vh;
   margin-left: 5vw;
@@ -50,7 +50,7 @@
 }
 
 /* 브라우저 창 header */
-.frame-header {
+.frameHeader {
   width: 88vw;
   height: 7.205vw;
   object-fit: cover;
@@ -59,7 +59,7 @@
 }
 
 /* 디데이 */
-.d-day {
+.dDay {
   font-family: var(--font-galmuri7);
   font-size: 7vw;
   color: var(--main-pink);
@@ -70,7 +70,7 @@
 }
 
 /* 컨텐츠 리스트 */
-.content-list {
+.contentList {
   display: grid;
   position: relative;
   width: 73vw;
@@ -85,14 +85,14 @@
 }
 
 /* 컨텐츠 묶음 */
-.content-set {
+.contentSet {
   position: relative;
   align-items: center;
 
 }
 
 /* 컨텐츠 아이콘 이미지 */
-.content-icon {
+.contentIcon {
   position: absolute;
   width: 13vw;
   height: 9vh;
@@ -100,7 +100,7 @@
 }
 
 /* 컨텐츠 번호 */
-.content-num {
+.contentNum {
   display: inline;
   position: absolute;
   z-index: 1;
@@ -122,7 +122,7 @@
   display: grid;
   width: 52vw;
   margin: auto;
-  margin-top: 4vh;
+  margin-top: 3.2vh;
   
   grid-template-columns: repeat(4, 14vw);
 }

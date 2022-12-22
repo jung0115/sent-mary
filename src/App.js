@@ -4,11 +4,13 @@ import {
   Route
 } from "react-router-dom";
 import Home from "./routes/Home"
+import Content from "./routes/Content";
 
 function App() {
   return <Router>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/content" element={<Content />} />
     </Routes>
   </Router>;
 }
