@@ -7,7 +7,7 @@ import Home from "./routes/Home"
 import Content from "./routes/Content";
 
 function App() {
-  return <Router>
+  return <Router basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/content/:id" element={<Content />} />
