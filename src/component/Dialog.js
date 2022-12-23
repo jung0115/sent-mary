@@ -14,7 +14,7 @@ const Dialog = () => {
           className={styles.form}
           method="post"
           name="dialogForm"
-          action={"/content"}>
+          action={"/content/"}>
           <input
             className={styles.inputPassword}
             type="password"

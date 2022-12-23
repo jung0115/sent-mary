@@ -14,7 +14,7 @@ const Home = () => {
   // d-day 계산
   const calculateD_Day = () => {
     var now = new Date();
-    var dday = new Date(2023, 0, 20);
+    var dday = new Date(2023, 0, 23);
     var gap = dday.getTime() - now.getTime();
     var result = Math.ceil(gap / (1000 * 60 * 60 * 24));
     //console.log(result);
@@ -51,6 +51,11 @@ const Home = () => {
     if(openCheck) {
       console.log(contentNum + " open");
       setSelectContent(contentNum);
+
+      var link = `/content/${contentNum}`;
+      //location.href = link;
+      //location.replace(link);
+
     }
     else {
       console.log(contentNum + " close");
@@ -84,44 +89,50 @@ const Home = () => {
               alt="header"
               src="img/browser-header.png" />
 
-            <div className={styles.dDay}>
-              D-{dDay}
-            </div>
-
-            <div className={styles.contentList}>
-              {contentIcons.map(contentIcon => (
-                <div
-                  className={styles.contentSet}
-                  onClick={(() => 
-                    goToContent(contentIcon.contentNum, contentIcon.openCheck)
-                  )}>
-                  <img
-                    className={styles.contentIcon}
-                    alt="content"
-                    src={contentIcon.contentSrc} />
-                  
-                  <span className={styles.contentNum}>
-                    {contentIcon.contentNum}
-                  </span>
+            {selectContent == 0 ?
+              (<div>
+                <div className={styles.dDay}>
+                  D-{dDay}
                 </div>
-              ))}
-            </div>
 
-            <div className={styles.sources}>
-              <a href="[https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm](https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm)">Freepik</a>
-              <a href="[https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie)">Freepik</a>
-              <a href="[https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie)">Freepik</a>
-              <a href="[https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie)">Freepik</a>
-            </div>
+                <div className={styles.contentList}>
+                  {contentIcons.map(contentIcon => (
+                    <div
+                      className={styles.contentSet}
+                      onClick={(() => 
+                        goToContent(contentIcon.contentNum, contentIcon.openCheck)
+                      )}>
+                      <img
+                        className={styles.contentIcon}
+                        alt="content"
+                        src={contentIcon.contentSrc} />
+                      
+                      <span className={styles.contentNum}>
+                        {contentIcon.contentNum}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.sources}>
+                  <a href="[https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm](https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm)">Freepik</a>
+                  <a href="[https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie)">Freepik</a>
+                  <a href="[https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie)">Freepik</a>
+                  <a href="[https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie)">Freepik</a>
+                </div>
+              </div>
+              )
+              : (<Content contentNum={selectContent}/>)}
           </div>
-          {selectContent == 0 ?
-          (console.log("close"))
-          : (<Dialog >check</Dialog>)}
         </div>
       )}
     </div>
   );
 }
+/* 
+{selectContent == 0 ?
+          (console.log("close"))
+          : (<Dialog />)}
+*/
 
 
 export default Home;

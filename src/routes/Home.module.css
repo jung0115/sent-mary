@@ -20,7 +20,9 @@
 /* 배경 */
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh - 5vw;
+  padding-bottom: 5vw;
+  
   background-color: var(--main-pink);
 }
 
@@ -38,7 +40,8 @@
 /* 브라우저 창 frame */
 .mainFrame {
   width: 90vw;
-  height: 83vh;
+  min-height: 83vh;
+
   margin-left: 5vw;
   margin-right: 5vw;
   
@@ -123,6 +126,7 @@
   width: 52vw;
   margin: auto;
   margin-top: 3.2vh;
+  margin-bottom: 3vh;
   
   grid-template-columns: repeat(4, 14vw);
 }
