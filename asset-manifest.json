@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sent-mary/static/css/main.32e30569.css",
-    "main.js": "/sent-mary/static/js/main.a8f204a4.js",
+    "main.css": "/sent-mary/static/css/main.207e4ac5.css",
+    "main.js": "/sent-mary/static/js/main.91585880.js",
     "static/media/Galmuri9.ttf": "/sent-mary/static/media/Galmuri9.d68dcb0f5574a2160fd6.ttf",
     "static/media/Galmuri7.ttf": "/sent-mary/static/media/Galmuri7.2926e1b0f50267b11751.ttf",
     "index.html": "/sent-mary/index.html",
-    "main.32e30569.css.map": "/sent-mary/static/css/main.32e30569.css.map",
-    "main.a8f204a4.js.map": "/sent-mary/static/js/main.a8f204a4.js.map"
+    "main.207e4ac5.css.map": "/sent-mary/static/css/main.207e4ac5.css.map",
+    "main.91585880.js.map": "/sent-mary/static/js/main.91585880.js.map"
   },
   "entrypoints": [
-    "static/css/main.32e30569.css",
-    "static/js/main.a8f204a4.js"
+    "static/css/main.207e4ac5.css",
+    "static/js/main.91585880.js"
   ]
 }
