@@ -2,8 +2,12 @@
 import { useEffect, useState } from "react";
 import { firestore } from "../firebase";
 import styles from './Content.module.css';
+import { useParams } from "react-router-dom";
 
-const Content = ({ contentNum }) => {
+const Content = () => {
+  const {id} = useParams();
+  const contentNum = String(id);
+
   const [loading, setLoading] = useState(false);
   const [dDay, setDDay] = useState(0);
   const [content, setContent] = useState("");
@@ -38,19 +42,37 @@ const Content = ({ contentNum }) => {
 
   
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <h1>Loading...</h1> // 로딩 페이지
       ) : (
         // content 페이지
-        <div>
-          <div className={styles.dDay}>
-            D-{dDay}
+        <div className={styles.home}>
+          {/* 제목 */}
+          <div className={styles.title}>
+            <a
+              className={styles.titleLink}
+              href={process.env.PUBLIC_URL + "/"}>
+              sent mary
+            </a>
           </div>
 
-          <div className={styles.contentFrame}>
-            <div className={styles.contentText}>
-              {content}
+          {/* 메인 프레임 */}
+          <div className={styles.mainFrame}>
+            {/* 프레임 헤더 */}
+            <img
+              className={styles.frameHeader}
+              alt="header"
+              src={process.env.PUBLIC_URL + '/img/browser-header.png'} />
+
+            <div className={styles.dDay}>
+              D-{dDay}
+            </div>
+
+            <div className={styles.contentFrame}>
+              <div className={styles.contentText}>
+                {content}
+              </div>
             </div>
           </div>
         </div>

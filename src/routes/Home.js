@@ -89,20 +89,19 @@ const Home = () => {
               alt="header"
               src={process.env.PUBLIC_URL + '/img/browser-header.png'} />
 
-            {selectContent == 0 ?
-              (<div>
-                <div className={styles.dDay}>
-                  D-{dDay}
-                </div>
+            <div className={styles.dDay}>
+              D-{dDay}
+            </div>
 
-                <div className={styles.contentList}>
-                  {contentIcons.map(contentIcon => (
-                    <div
-                      key={contentIcon.contentNum}
-                      className={styles.contentSet}
-                      onClick={(() => 
-                        goToContent(contentIcon.contentNum, contentIcon.openCheck)
-                      )}>
+            <div className={styles.contentList}>
+              {contentIcons.map(contentIcon => (
+                <div
+                  key={contentIcon.contentNum}
+                  className={styles.contentSet}>
+
+                  {contentIcon.openCheck ? (
+                    <a
+                      href={process.env.PUBLIC_URL + "/content/" + contentIcon.contentNum}>
                       <img
                         className={styles.contentIcon}
                         alt="content"
@@ -111,18 +110,27 @@ const Home = () => {
                       <span className={styles.contentNum}>
                         {contentIcon.contentNum}
                       </span>
+                    </a>
+                  ) : (
+                    <div>
+                      <img
+                        className={styles.contentIcon}
+                        alt="content"
+                        src={contentIcon.contentSrc} />
+                      <span className={styles.contentNum}>
+                        {contentIcon.contentNum}
+                      </span>
                     </div>
-                  ))}
+                  )}
                 </div>
-                <div className={styles.sources}>
-                  <a href="[https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm](https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm)">Freepik</a>
-                  <a href="[https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie)">Freepik</a>
-                  <a href="[https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie)">Freepik</a>
-                  <a href="[https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie)">Freepik</a>
-                </div>
-              </div>
-              )
-              : (<Content contentNum={selectContent}/>)}
+              ))}
+            </div>
+            <div className={styles.sources}>
+              <a href="[https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm](https://kr.freepik.com/free-vector/dessert-icons-in-pixel-art_29012360.htm)">Freepik</a>
+              <a href="[https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/drinks-icons-in-pixel-art_29012370.htm#from_view=detail_serie)">Freepik</a>
+              <a href="[https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/ice-cream-icons-in-pixel-art_29012357.htm#from_view=detail_serie)">Freepik</a>
+              <a href="[https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie](https://kr.freepik.com/free-vector/fruit-icons-in-pixel-art_29012368.htm#from_view=detail_serie)">Freepik</a>
+            </div>
           </div>
         </div>
       )}
@@ -130,6 +138,8 @@ const Home = () => {
   );
 }
 /* 
+: (<Content contentNum={selectContent}/>)}
+
 {selectContent == 0 ?
           (console.log("close"))
           : (<Dialog />)}
