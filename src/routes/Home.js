@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from './Home.module.css';
 import Content from "./Content";
 import Dialog from "../component/Dialog";
@@ -100,8 +101,8 @@ const Home = () => {
                   className={styles.contentSet}>
 
                   {contentIcon.openCheck ? (
-                    <a
-                      href={process.env.PUBLIC_URL + "/content/" + contentIcon.contentNum}>
+                    <Link
+                      to={`/content/${contentIcon.contentNum}`}>
                       <img
                         className={styles.contentIcon}
                         alt="content"
@@ -110,7 +111,7 @@ const Home = () => {
                       <span className={styles.contentNum}>
                         {contentIcon.contentNum}
                       </span>
-                    </a>
+                    </Link>
                   ) : (
                     <div>
                       <img

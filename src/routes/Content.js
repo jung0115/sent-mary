@@ -1,8 +1,9 @@
 // content 내부 페이지
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { firestore } from "../firebase";
 import styles from './Content.module.css';
-import { useParams } from "react-router-dom";
 
 const Content = () => {
   const {id} = useParams();
@@ -50,11 +51,11 @@ const Content = () => {
         <div className={styles.home}>
           {/* 제목 */}
           <div className={styles.title}>
-            <a
+            <Link
               className={styles.titleLink}
-              href={process.env.PUBLIC_URL + "/"}>
+              to={`/`}>
               sent mary
-            </a>
+            </Link>
           </div>
 
           {/* 메인 프레임 */}
