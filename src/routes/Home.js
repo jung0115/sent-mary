@@ -24,8 +24,8 @@ const Home = () => {
 
   // contents icon setting
   const getContents = async() => {
-    const open = "img/open_icons/dessert_";
-    const close = "img/closed_icons/closed_dessert_"
+    const open = process.env.PUBLIC_URL + "/img/open_icons/dessert_";
+    const close = process.env.PUBLIC_URL + "/img/closed_icons/closed_dessert_"
     for(var i = 1; i <= contentsNum; i++) {
       var contentSrc;
       var openCheck = false;
@@ -87,7 +87,7 @@ const Home = () => {
             <img
               className={styles.frameHeader}
               alt="header"
-              src="img/browser-header.png" />
+              src={process.env.PUBLIC_URL + '/img/browser-header.png'} />
 
             {selectContent == 0 ?
               (<div>
@@ -98,6 +98,7 @@ const Home = () => {
                 <div className={styles.contentList}>
                   {contentIcons.map(contentIcon => (
                     <div
+                      key={contentIcon.contentNum}
                       className={styles.contentSet}
                       onClick={(() => 
                         goToContent(contentIcon.contentNum, contentIcon.openCheck)
@@ -134,5 +135,5 @@ const Home = () => {
           : (<Dialog />)}
 */
 
-
+//npm run deploy
 export default Home;
